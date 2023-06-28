@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { SupabaseProvider } from "@/providers/SupabaseProvider";
 import { UserProvider } from "@/providers/UserProvider";
+import { ModalProvider } from "@/providers/ModalProvider";
+import { ToasterProvider } from "@/providers/ToasterProviders";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
+          <ModalProvider/>
             <Sidebar>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
