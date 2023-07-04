@@ -25,8 +25,8 @@ export const ModalProvider = () => {
   return (
     <>
       <AuthModal />
-      {/* <SubscribeModal products={products} />
-      <UploadModal /> */}
+ 
+      <UploadModal />
     </>
   );
 };
